@@ -18,11 +18,20 @@
 
 ## 安裝和使用
 
-請參閱 [INSTALL.md](./INSTALL.md) 文件以獲取詳細的安裝說明和環境設置指南。
+本專案提供了可執行的 Jupyter Notebook (`.ipynb`) 檔案，您可以選擇以下幾種方式來運行這些檔案：
 
-## 參與貢獻
+### 使用 Google Colab
 
-我們歡迎所有對機器學習有興趣的開發者參與貢獻。請參閱 [CONTRIBUTING.md](./CONTRIBUTING.md) 文件以瞭解如何參與我們的開源專案。
+1. 打開 [Google Colab](https://colab.research.google.com/)。
+2. 點擊「檔案」 > 「上傳筆記本」以上傳 `.ipynb` 檔案，或選擇「從 GitHub 打開」並輸入本專案的 GitHub 儲存庫 URL 以直接打開檔案。
+3. 開始在 Colab 環境中運行和編輯 Notebook。
+
+### 使用 Visual Studio Code
+
+1. 確保您已經安裝了 [Visual Studio Code](https://code.visualstudio.com/) 和 [Python 擴展](https://marketplace.visualstudio.com/items?itemName=ms-python.python)。
+2. 安裝 [Jupyter 擴展](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)。
+3. 下載或克隆本專案的代碼。
+4. 使用 VS Code 打開 `.ipynb` 檔案，並在內建的 Jupyter Notebook 環境中進行編輯和運行。
 
 ## 聯絡
 
