@@ -68,7 +68,7 @@
 
 **Naive Bayes** 是一種基於貝葉斯定理的分類算法，假設特徵之間是條件獨立的。它通常用於文本分類和垃圾郵件檢測等問題。
 
-![Naive Bayes](figure/Naive%20Bayes.jpg)
+<img src="figure/Naive Bayes.jpg" alt="Naive Bayes" width="1200">
 
 **例子**：在垃圾郵件過濾系統中，Naive Bayes 可以根據郵件中的單詞頻率來預測郵件是否是垃圾郵件。
 
@@ -76,11 +76,15 @@
 
 **線性回歸**（Linear Regression）是一種基本的回歸算法，用於預測連續值。它通過擬合一條最佳的直線來最小化預測值和實際值之間的誤差。
 
+<img src="figure/Linear Regression.png" alt="Linear Regression" width="1200">
+
 **例子**：預測一個學生的考試分數，可以使用線性回歸模型，通過學習學生的學習時間與實際考試成績之間的關係來進行預測。
 
 ### 4.3 決策樹（Decision Tree, DT）
 
 **決策樹**（Decision Tree）是一種以樹狀結構進行分類和回歸的算法。每個節點表示一個特徵，分支表示特徵的值，葉子節點表示預測結果。
+
+<img src="figure/Decision Tree.png" alt="Decision Tree" width="1200">
 
 **例子**：在判斷是否批准貸款時，決策樹可以根據申請人的信用分數、收入和負債等特徵進行分類，以決定是否批准貸款。
 
@@ -88,11 +92,15 @@
 
 **隨機森林**（Random Forest）是由多棵決策樹組成的集成學習算法。它通過對多個決策樹的預測結果進行平均或投票來提高預測準確性和穩定性。
 
+<img src="figure/Random Forest.jpg" alt="Random Forest" width="1200">
+
 **例子**：在預測顧客流失的問題中，隨機森林可以結合多棵決策樹的預測結果來提供更準確的預測，從而幫助企業制定保留顧客的策略。
 
 ### 4.5 支持向量機（Support Vector Machine, SVM）
 
 **支持向量機**（Support Vector Machine, SVM）是一種監督學習算法，通過尋找最佳分隔超平面來進行分類或回歸。SVM 旨在最大化分類邊界，從而提高模型的泛化能力。
+
+<img src="figure/Support Vector Machine.png" alt="Support Vector Machine" width="1200">
 
 **例子**：在手寫數字識別問題中，SVM 可以用來區分不同數字的圖像，通過尋找最佳邊界來分隔不同的數字類別。
 
@@ -100,17 +108,23 @@
 
 **多層感知機**（Multilayer Perceptron, MLP）是一種前饋神經網絡，包含一個或多個隱藏層。它適用於處理非線性問題和複雜的模式識別任務。
 
+<img src="figure/Multilayer Perceptron.png" alt="Multilayer Perceptron" width="1200">
+
 **例子**：在圖像識別中，MLP 可以用來識別圖像中的物體或特徵。通過多層隱藏層的學習，MLP 可以捕捉到圖像的複雜模式。
 
 ### 4.7 XGBoost
 
 **XGBoost**（Extreme Gradient Boosting）是一種集成學習算法，基於梯度提升（Gradient Boosting）框架。它通過集成多個弱學習器來提高預測性能，並具有高效的運算和優秀的預測能力。
 
+<img src="figure/XGBoost.png" alt="XGBoost" width="1200">
+
 **例子**：在房價預測中，XGBoost 可以利用訓練數據中多個特徵的交互作用，從而提供更準確的預測結果。
 
 ### 4.8 LightGBM
 
 **LightGBM**（Light Gradient Boosting Machine）是一種基於梯度提升的算法，旨在提高訓練速度和降低內存使用。它能夠處理大規模數據和高維特徵。
+
+<img src="figure/LightGBM.png" alt="LightGBM" width="1200">
 
 **例子**：在大型電商平台的推薦系統中，LightGBM 可以用來處理大量用戶行為數據，提供即時的推薦結果。
 
