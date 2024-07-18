@@ -68,6 +68,8 @@
 
 **Naive Bayes** 是一種基於貝葉斯定理的分類算法，假設特徵之間是條件獨立的。它通常用於文本分類和垃圾郵件檢測等問題。
 
+![Naive Bayes](figure/Naive%20Bayes.jpg)
+
 **例子**：在垃圾郵件過濾系統中，Naive Bayes 可以根據郵件中的單詞頻率來預測郵件是否是垃圾郵件。
 
 ### 4.2 線性回歸（Linear Regression, LR）
