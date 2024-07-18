@@ -46,16 +46,19 @@
 ### 加載數據集
 
 ```python
+import pandas as pd
 from sklearn.datasets import load_breast_cancer
 
 # 加載數據集
 data = load_breast_cancer()
-print(data.DESCR)
+df = pd.DataFrame(data.data, columns=data.feature_names)
+df['target'] = data.target
+df.head(5)
 ```
 
 ## 1. 監督學習模型
 
-### 1.1 Naive Bayes（朴素貝葉斯）
+### 1.1 朴素貝葉斯(Naive Bayes, NB)
 
 **Naive Bayes** 是一種基於貝葉斯定理的分類算法，假設特徵之間是條件獨立的。它通常用於文本分類和垃圾郵件檢測等問題。
 
@@ -65,7 +68,9 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 # 加載數據集
-X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, test_size=0.2, random_state=42)
+X = df.drop('target', axis=1)
+y = df['target']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # 建立模型
 model = GaussianNB()
