@@ -53,7 +53,7 @@ shap_values = explainer.shap_values(X_test)
 ```
 
 ## 全局可解釋性(Global interpretability)
-### Beeswarm
+### 蜜蜂圖(Beeswarm)
 - 橫軸（X 軸）：表示 SHAP 值的大小，即每個特徵對模型預測結果的影響。值越大，該特徵對模型輸出的影響越大。SHAP 值為正表示該特徵增加了預測的概率，為負則表示減少了預測的概率。
 
 - 縱軸（Y 軸）：表示模型的特徵。每個點代表該特徵在數據集中一個樣本的 SHAP 值。
@@ -76,6 +76,8 @@ shap.plots.beeswarm(shap_values)
 shap.plots.beeswarm(shap_values.abs, color="shap_red")
 ```
 
+<img src="figure/beeswarm_abs.png" alt="beeswarm_abs" width="1200">
+
 ### 柱狀圖(Bar plot)
 ```python
 shap.plots.bar(shap_values,
@@ -83,14 +85,18 @@ shap.plots.bar(shap_values,
 )
 ```
 
+<img src="figure/bar.png" alt="bar" width="1200">
+
 ## 局部可解釋性(Local interpretability)
 
 - 解釋測試集中的單一預測
 
-### 瀑布圖
+### 瀑布圖(WaterFall)
 
 - 說明了每個特徵如何對單一預測做出貢獻
 - 將預測推高的特徵顯示為紅色，將預測推低的特徵顯示為藍色。
 ```python
 shap.plots.waterfall(shap_values[0])
 ```
+
+<img src="figure/waterfall.png" alt="waterfall" width="1200">
