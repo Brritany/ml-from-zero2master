@@ -41,9 +41,11 @@
 
 ## 2. 數據處理
 
-### 2.1 數據清理(Date Cleaning & Data Preprocessing)
+### 2.1 數據清理(Data Cleaning & Data Preprocessing)
 
 數據清理是數據預處理的第一步，包括處理缺失值、去除異常值和修正數據錯誤。
+
+<img src="figure/Data Cleaning.png" alt="Data Cleaning" width="1200">
 
 **例子**：如果您的數據集中有某些樣本的房屋價格缺失，您可能需要選擇填補缺失值（如使用平均值）或刪除這些樣本，以確保數據的完整性和準確性。
 
