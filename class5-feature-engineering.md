@@ -4,7 +4,7 @@
 # 導入工具包
 ```python
 from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest, chi2, RFE
+from sklearn.feature_selection import SelectKBest, chi2, RFE, SelectFromModel
 from sklearn.utils import resample
 from sklearn.datasets import load_breast_cancer
 import pandas as pd
@@ -55,19 +55,53 @@ selected_df = pd.concat([selected_df, target.reset_index(drop=True)], axis=1)
 selected_df.head()
 ```
 
-## 使用遞歸特徵消除（RFE）
-遞歸特徵消除（RFE）是通過遞歸地訓練模型，並每次消除表現最差的特徵來選擇特徵。
+## RFE（Recursive Feature Elimination）遞歸特徵消除
+RFE 的主要步驟是：
+1. 使用一個基礎模型（如邏輯回歸）來訓練所有特徵。
+2. 根據模型的係數或特徵重要性排序特徵。
+3. 刪除最不重要的特徵。
+4. 重複上述步驟，直到達到預定的特徵數目。
+
+RFE 的優勢在於它遞歸地刪除特徵，因此更精細。
 ```python
 from sklearn.linear_model import LogisticRegression
 
-# 使用遞歸特徵消除進行特徵選擇
+# 使用邏輯回歸作為基礎模型
 model = LogisticRegression(max_iter=10000)
+
+# RFE設置需要選擇的特徵數量為2
 rfe = RFE(model, n_features_to_select=2)
+
+# 訓練 RFE 模型，找到最重要的2個特徵
 fit = rfe.fit(features, target)
 
+# 根據 RFE 模型選擇特徵
 selected_features_rfe = features.loc[:, fit.support_]
 selected_df_rfe = pd.concat([selected_features_rfe, target.reset_index(drop=True)], axis=1)
 selected_df_rfe.head()
+```
+
+## SelectFromModel
+SelectFromModel 的主要步驟是：
+
+1. 使用一個基礎模型（如隨機森林）來訓練所有特徵。
+2. 根據模型的特徵重要性選擇特徵。特徵重要性低於某個閾值的特徵會被移除。
+
+SelectFromModel 的優勢在於它依賴於模型自身的特徵選擇機制，可以使用任意模型的特徵重要性。
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+# 使用隨機森林作為基礎模型
+selector = SelectFromModel(RandomForestClassifier(n_estimators=100), threshold="mean")
+
+# 訓練模型並選擇特徵
+selector.fit(features, target)
+selected_features_sfm = selector.transform(features)
+selected_df_sfm = pd.DataFrame(data=selected_features_sfm)
+
+# 將目標欄位添加回去
+selected_df_sfm = pd.concat([selected_df_sfm, target.reset_index(drop=True)], axis=1)
+selected_df_sfm.head()
 ```
 
 ## 數據抽樣（Sampling）
