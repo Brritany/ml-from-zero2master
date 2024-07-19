@@ -70,6 +70,8 @@ shap_values = explainer.shap_values(X_test)
 shap.plots.beeswarm(shap_values)
 ```
 
+<img src="figure/beeswarm.png" alt="beeswarm" width="1200">
+
 ```python
 shap.plots.beeswarm(shap_values.abs, color="shap_red")
 ```
