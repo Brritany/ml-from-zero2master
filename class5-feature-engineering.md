@@ -27,6 +27,9 @@ target = df[target_column]
 
 ## 主成分分析（PCA）
 PCA 是一種降維技術，通過線性變換將數據轉換到一個新的坐標系中，其中新的坐標系中的軸（主成分）是根據數據的變異性排序的。
+
+<img src="figure/PCA.png" alt="PCA" width="1200">
+
 ```python
 # 進行 PCA
 pca = PCA(n_components=2)  # 將維度降到2維
@@ -41,6 +44,8 @@ pca_df.head()
 
 ## 特徵選擇（Feature Selection）
 特徵選擇是從數據中選擇最重要的特徵，以提高模型的性能。
+
+<img src="figure/feature_selection.jpeg" alt="feature_selection" width="1200">
 
 ### 使用卡方檢驗（Chi-Square Test）
 卡方檢驗用於測試兩個分類變量之間的獨立性。這裡我們用它來選擇與目標變量最相關的特徵。
@@ -63,6 +68,9 @@ RFE 的主要步驟是：
 4. 重複上述步驟，直到達到預定的特徵數目。
 
 RFE 的優勢在於它遞歸地刪除特徵，因此更精細。
+
+<img src="figure/RFE.png" alt="RFE" width="1200">
+
 ```python
 from sklearn.linear_model import LogisticRegression
 
@@ -115,7 +123,7 @@ majority = df[df[target_column] == df[target_column].value_counts().idxmax()]
 minority = df[df[target_column] == df[target_column].value_counts().idxmin()]
 
 # 上採樣少數類別
-minority_upsampled = resample(minority, 
+minority_upsampled = resample(minority,
                               replace=True,     # 允許放回抽樣
                               n_samples=len(majority),    # 使兩個類別的數量相同
                               random_state=42)  # 設定隨機種子
@@ -133,7 +141,7 @@ majority = df[df[target_column] == df[target_column].value_counts().idxmax()]
 minority = df[df[target_column] == df[target_column].value_counts().idxmin()]
 
 # 下採樣多數類別
-majority_downsampled = resample(majority, 
+majority_downsampled = resample(majority,
                                 replace=False,    # 不允許放回抽樣
                                 n_samples=len(minority),  # 使兩個類別的數量相同
                                 random_state=42)  # 設定隨機種子
