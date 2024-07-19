@@ -1,5 +1,7 @@
 # Pandas 資料分析和常用工具
 
+<img src="figure/pandas.png" alt="pandas" width="1200">
+
 ## 引言
 `pandas` 是一個強大的資料分析與處理工具，廣泛應用於數據科學、統計分析和機器學習等領域。本教學手冊旨在介紹 `pandas` 的基本用法，涵蓋資料讀取、清理、操作、分析和視覺化。
 [pandas官網](https://pandas.pydata.org/pandas-docs/stable/index.html)
@@ -13,7 +15,7 @@ import pandas as pd
 ## 創建 DataFrame
 ```python
 data = {
-    'Name': ['John', 'Anna', 'Peter', 'Linda', 'Michael', 'Sara', 'David', 'Laura', 'James', 'Emily'],
+    'Name': ['John Doe', 'Anna Smith', 'Peter Johnson', 'Linda Lee', 'Sara Ku', 'David Huang', 'Laura Le', 'James J', 'Emily Wang', 'Donald Trump'],
     'Age': [28, 24, 35, 32, 40, 22, 29, 31, 27, 25],
     'Gender': ['Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female'],
     'Income': [50000, 60000, 55000, 65000, 70000, 48000, 52000, 61000, 59000, 53000],
@@ -102,14 +104,6 @@ print(gender_counts)
 # 篩選出年齡大於30的資料
 filtered_df = df[df['Age'] > 35]
 filtered_df
-```
-
-### 交叉表分析
-```python
-# 建立性別與年齡段的交叉表
-df['Age_Group'] = pd.cut(df['Age'], bins=[20, 30, 40], labels=['20-30', '30-40'])
-cross_tab = pd.crosstab(df['Gender'], df['Age_Group'])
-print(cross_tab)
 ```
 
 ## 資料清理
@@ -202,5 +196,27 @@ df.rename(columns={'Name': 'Full Name', 'Children': 'Children (count)'}, inplace
 
 ### 刪除特定欄位
 ```python
-df = df.drop(['Age_Group'], axis=1)
+df = df.drop(['Gender1'], axis=1)
+```
+
+### 拆分欄位
+```python
+# 使用 str.split 方法拆分 Full Name 列
+name_split = df['Full Name'].str.split(' ', n=1, expand=True)
+name_split.columns = ['First Name', 'Last Name']
+
+name_split
+```
+
+### 拆分欄位 Methods 2
+```python
+df[['First Name', 'Last Name']] = df['Full Name'].str.split(' ', n=1, expand=True)
+df.head()
+```
+
+### 合併欄位
+```python
+# 使用 concat 方法合併 DataFrame
+df = pd.concat([df, name_split], axis=1)
+df.head()
 ```
