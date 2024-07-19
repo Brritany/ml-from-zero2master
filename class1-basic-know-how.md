@@ -104,13 +104,22 @@
 
 **Naive Bayes** 是一種基於貝葉斯定理的分類算法，假設特徵之間是條件獨立的。它通常用於文本分類和垃圾郵件檢測等問題。
 
+- 由於Naive Bayes的訓練和測試都很有效率，通常被作為分類研究的基線。
+
+- 優點(Pros)
+  - 簡單且易於解釋.計算速度快
+  - 適合高維空間
+- 缺點(Cons)
+  - 如果變數之間存在顯著的依賴性，性能將受到抑制
+  - 如果測試資料中出現的類別沒有出現在訓練資料中，則其機率為零
+
 <img src="figure/Naive Bayes.jpg" alt="Naive Bayes" width="1200">
 
 **例子**：在垃圾郵件過濾系統中，Naive Bayes 可以根據郵件中的單詞頻率來預測郵件是否是垃圾郵件。
 
 ### 4.2 線性回歸（Linear Regression, LR）
 
-**線性回歸**（Linear Regression）是一種基於**最小平方法估計Least square estimation**，用於**預測連續值**。它通過擬合一條最佳的直線來最小化預測值和實際值之間的誤差。
+**線性回歸**（Linear Regression）是一種基於 **最小平方法估計(Least square estimation)**，用於**預測連續值**。它通過擬合一條最佳的直線來最小化預測值和實際值之間的誤差。
 
 <img src="figure/Linear Regression.png" alt="Linear Regression" width="1200">
 
@@ -118,25 +127,41 @@
 
 ### 4.3 羅吉斯回歸（Logistic Regression, LR）
 
-**羅吉斯回歸**（Logistic Regression）是一種基於**最大似然估計Maximum likelihood estimation**的概念。根據這個估計，觀測到的數據應該是最可能的。因此，Logistic Regression**預測二元**結果的機率。如果新觀察值的機率高於設定的閾值，則預測該觀察值屬於該類別。
+**羅吉斯回歸**（Logistic Regression）是一種基於 **最大似然估計(Maximum likelihood estimation)** 的概念。根據這個估計，觀測到的數據應該是最可能的。因此，Logistic Regression**預測二元**結果的機率。如果新觀察值的機率高於設定的閾值，則預測該觀察值屬於該類別。
 
-- 在邏輯迴歸中，我們將輸入的加權和傳遞給激活函數，該函數可以映射 0 到 1 之間的值。
+- 在羅吉斯回歸中，我們將輸入的加權和傳遞給激活函數，該函數可以映射 0 到 1 之間的值。
 - 優點(Pros)
   - 計算速度快，可以使用新資料輕鬆更新
   - 輸出可以解釋為機率；這可以用於排名
   - 正則化技術可用於防止過度擬合
-- 缺點
+- 缺點(Cons)
   - 無法學習複雜的關係，難以捕捉非線性關係
 
-<img src="figure/Linear-Logistic.jpg" alt="Linear-Logistic" width="1200">
+<img src="figure/Logistic regression.png" alt="Logistic regression" width="1200">
 
 **例子**：預測一個學生的考試分數，可以使用線性回歸模型，通過學習學生的學習時間與實際考試成績之間的關係來進行預測。
 
-<img src="figure/Logistic regression.png" alt="Logistic regression" width="1200">
+## Linear Regression V.S. Logistic Regression
+
+<img src="figure/Linear-Logistic.jpg" alt="Linear-Logistic" width="1200">
+
+## Tree Model
 
 ### 4.4 決策樹（Decision Tree, DT）
 
 **決策樹**（Decision Tree）是一種以樹狀結構進行分類和回歸的算法。每個節點表示一個特徵，分支表示特徵的值，葉子節點表示預測結果。
+
+- **隨機森林 (Random Forests, RF)** 和 **梯度提升樹 (Gradient Boosted Trees, GBT)** 是兩種構建許多單獨的樹並彙集它們的預測的演算法
+- 由於使用結果集合來做出最終決定，因此被稱為“集成技術(Ensemble techniques)”。
+
+- 優點(Pros)
+  - 單一決策樹可快速訓練
+  - 對雜訊和缺失值具有穩健性
+  - RF 表現非常好“開箱即用(out-of-the- box)”
+
+- 缺點(Cons)
+  - 單一決策樹容易過度擬合（集成技術因此出現！）
+  - 複雜的樹很難解釋
 
 <img src="figure/Decision Tree.png" alt="Decision Tree" width="1200">
 
@@ -150,23 +175,8 @@
 
 **例子**：在預測顧客流失的問題中，隨機森林可以結合多棵決策樹的預測結果來提供更準確的預測，從而幫助企業制定保留顧客的策略。
 
-### 4.6 支持向量機（Support Vector Machine, SVM）
-
-**支持向量機**（Support Vector Machine, SVM）是一種監督學習算法，通過尋找最佳分隔超平面來進行分類或回歸。SVM 旨在最大化分類邊界，從而提高模型的泛化能力。
-
-<img src="figure/Support Vector Machine.png" alt="Support Vector Machine" width="1200">
-
-**例子**：在手寫數字識別問題中，SVM 可以用來區分不同數字的圖像，通過尋找最佳邊界來分隔不同的數字類別。
-
-### 4.7 多層感知機（Multilayer Perceptron, MLP）
-
-**多層感知機**（Multilayer Perceptron, MLP）是一種前饋神經網絡，包含一個或多個隱藏層。它適用於處理非線性問題和複雜的模式識別任務。
-
-<img src="figure/Multilayer Perceptron.png" alt="Multilayer Perceptron" width="1200">
-
-**例子**：在圖像識別中，MLP 可以用來識別圖像中的物體或特徵。通過多層隱藏層的學習，MLP 可以捕捉到圖像的複雜模式。
-
-### 4.8 XGBoost
+## Ensemble techniques
+### 4.6 XGBoost
 
 **XGBoost**（Extreme Gradient Boosting）是一種集成學習算法，基於梯度提升（Gradient Boosting）框架。它通過集成多個弱學習器來提高預測性能，並具有高效的運算和優秀的預測能力。
 
@@ -174,14 +184,33 @@
 
 **例子**：在房價預測中，XGBoost 可以利用訓練數據中多個特徵的交互作用，從而提供更準確的預測結果。
 
-### 4.9 LightGBM
+### 4.7 LightGBM
 
-**LightGBM**（Light Gradient Boosting Machine）是一種基於梯度提升的算法，旨在提高訓練速度和降低內存使用。它能夠處理大規模數據和高維特徵。
+**LightGBM**（Light Gradient Boosting Machine）是一種基於梯度提升（Gradient Boosting）的算法，旨在提高訓練速度和降低內存使用。它能夠處理大規模數據和高維特徵。
 
 <img src="figure/LightGBM.png" alt="LightGBM" width="1200">
 
 **例子**：在大型電商平台的推薦系統中，LightGBM 可以用來處理大量用戶行為數據，提供即時的推薦結果。
 
----
+### 4.8 支持向量機（Support Vector Machine, SVM）
 
-希望這份基礎知識文檔及其例子能夠幫助您進一步了解機器學習的基本概念。如果有任何需要修改或擴充的部分，請隨時告訴我！
+**支持向量機**（Support Vector Machine, SVM）是一種監督學習算法，通過尋找最佳分隔超平面來進行分類或回歸。SVM 旨在最大化分類邊界，從而提高模型的泛化能力。
+
+- 優點(Pros)
+  - 即使非線性可分也能夠找到解決方案
+  - 適合高維度空間（很多特徵）
+- 缺點(Cons)
+  - 很難解釋
+  - 訓練大型資料集可能會很慢
+
+<img src="figure/Support Vector Machine.png" alt="Support Vector Machine" width="1200">
+
+**例子**：在手寫數字識別問題中，SVM 可以用來區分不同數字的圖像，通過尋找最佳邊界來分隔不同的數字類別。
+
+### 4.9 多層感知機（Multilayer Perceptron, MLP）
+
+**多層感知機**（Multilayer Perceptron, MLP）是一種前饋神經網絡，包含一個或多個隱藏層。它適用於處理非線性問題和複雜的模式識別任務。
+
+<img src="figure/Multilayer Perceptron.png" alt="Multilayer Perceptron" width="1200">
+
+**例子**：在圖像識別中，MLP 可以用來識別圖像中的物體或特徵。通過多層隱藏層的學習，MLP 可以捕捉到圖像的複雜模式。
