@@ -10,7 +10,8 @@
 - [**資料前處理 Data PreProcessing**](./class3-data-preprocessing.md): 介紹常用資料前處理的方法
 - [**正則化 Data Normalization**](./class4-data-normalization.md): 介紹常用正則化的技術
 - [**特徵工程 Feature Engineering**](./class5-feature-engineering.md): 介紹常用的特徵篩選方法
-- [**建立模型**](./class3-create-model.md)：建立機器學習模型
+- [**建立模型**](./class6-create-model.md)：建立機器學習模型
+- [**可視化分析**](./class7-shap.md)：使用SHAP可視化分析模型結果
 
 ## Jupyter Notebook
 - Pandas Cookbook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Brritany/ml-from-zero2master/blob/main/jupyter%20notebook/pandas_cookbook.ipynb)
