@@ -21,9 +21,13 @@
 
 - **監督學習**（Supervised Learning）：在這種學習模式下，模型在訓練過程中使用帶有標籤的數據。每個訓練樣本都有一個對應的正確答案，模型的目標是學習從輸入到輸出的映射。
 
+<img src="figure/Supervised Learning.png" alt="Supervised Learning" width="1200">
+
   **例子**：假設您要預測房屋價格。您可以使用包含房屋特徵（如面積、位置、房間數等）和實際價格的數據集進行訓練。模型學會將房屋特徵與價格對應起來，從而對新房屋進行價格預測。
 
 - **非監督學習**（Unsupervised Learning）：與監督學習不同，非監督學習使用的數據沒有標籤。模型的目標是從數據中找到隱藏的模式或結構。
+
+<img src="figure/Unsupervised Learning.png" alt="Unsupervised Learning" width="1200">
 
   **例子**：假設您有一組顧客數據，但不知道這些顧客可以被劃分成多少類。您可以使用聚類算法（如 K-means）來自動將顧客分成不同的群體，從而發現不同的顧客類型。
 
