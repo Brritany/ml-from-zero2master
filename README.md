@@ -1,3 +1,15 @@
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
+![Documentation Progress](https://img.shields.io/badge/Documentation-80%25-green)
+![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)
+
 # ML From Zero to Master
 
 **ML From Zero to Master** 是一個從零開始的機器學習專案，旨在幫助學習者從基本概念到高級技術，逐步掌握機器學習的核心知識和技能。本專案包含了全面的教程、實踐代碼和詳細的步驟說明，適合所有對機器學習有興趣的學習者，無論是初學者還是有一定經驗的開發者。
