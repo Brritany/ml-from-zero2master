@@ -21,6 +21,8 @@
 
 - Hyperparameter Tuning [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Brritany/ml-from-zero2master/blob/main/jupyter%20notebook/Hyperparameter_Tuning.ipynb)
 
+- SHAP [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Brritany/ml-from-zero2master/blob/main/jupyter%20notebook/shap.ipynb)
+
 - Demo: 包含讀取資料集、資料前處理、正則話、建立模型、可視化分析 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Brritany/ml-from-zero2master/blob/main/jupyter%20notebook/demo.ipynb)
 
 - Try it: 自己手動嘗試建立一個預測模型  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Brritany/ml-from-zero2master/blob/main/jupyter%20notebook/try_it.ipynb)
