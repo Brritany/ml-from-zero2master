@@ -13,5 +13,5 @@
 - [**建立模型**](./class3-create-model.md)：建立機器學習模型
 
 ## Jupyter Notebook
-- Feature_Engineering [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Brritany/ml-from-zero2master/blob/main/jupyter_notebook/Feature_Engineering.ipynb)
+- Feature Engineering [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/brritany/ml-from-zero2master/blob/main/jupyter_notebook/Feature_Engineering.ipynb)
 - 
