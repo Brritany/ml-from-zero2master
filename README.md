@@ -5,8 +5,12 @@
 ## 內容
 
 - [**基礎知識**](./class1-basic-know-how.md)：機器學習概念、數據處理、特徵工程、模型評估、常見機器學習算法
+- **資料集**: 使用**Scikit-learn**提供的乳腺癌數據集（Breast Cancer dataset）
 - [**Pandas 資料分析和常用工具**](./class2_pandas.md): 介紹常用Pandas函數用於處理、分析資料
-- [**建立模型**](./class3-create-model.md)：使用**Scikit-learn**提供的乳腺癌數據集（Breast Cancer dataset）建立一個機器學習模型
+- [**資料前處理 Data PreProcessing**](./class3-data-preprocessing.md): 介紹常用資料前處理的方法
+- [**正則化 Data Normalization**](./class4-data-normalization.md): 介紹常用正則化的技術
+- [**特徵工程 Feature Engineering**](./class5-feature-engineering.md): 介紹常用的特徵篩選方法
+- [**建立模型**](./class3-create-model.md)：建立機器學習模型
 
 ## 安裝和使用
 
