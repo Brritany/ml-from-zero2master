@@ -88,6 +88,8 @@
 
 <img src="figure/Confusion Matrix.jpg" alt="Confusion Matrix" width="1200">
 
+<img src="figure/classification report.png" alt="classification report" width="1200">
+
 **例子**：在疾病預測模型中，您可能會關心模型的召回率，即模型能夠正確識別出多少實際患病的患者。高召回率表示模型能夠捕捉到大部分真正的陽性案例。
 
 ### 3.2 交叉驗證
