@@ -96,6 +96,9 @@ SelectFromModel 的主要步驟是：
 2. 根據模型的特徵重要性選擇特徵。特徵重要性低於某個閾值的特徵會被移除。
 
 SelectFromModel 的優勢在於它依賴於模型自身的特徵選擇機制，可以使用任意模型的特徵重要性。
+
+<img src="figure/SelectionFromModel.png" alt="SelectionFromModel" width="1200">
+
 ```python
 from sklearn.ensemble import RandomForestClassifier
 
@@ -114,6 +117,8 @@ selected_df_sfm.head()
 
 ## 數據抽樣（Sampling）
 處理不平衡數據集的一種方法是通過過採樣或下採樣來平衡類別分佈。
+
+<img src="figure/Sampling.webp" alt="Sampling" width="1200">
 
 ### 上採樣（Over-sampling）
 上採樣是通過增加少數類別的樣本數量來平衡數據集。
