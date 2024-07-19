@@ -7,7 +7,7 @@
 
 # But In Fact
 
-<img src="figure/ML_joke.jpg" alt="ML_joke" width="1200">
+<img src="figure/ML_joke.jpg" alt="ML_joke" width="900">
 
 ## 1. 機器學習概念
 
