@@ -1,6 +1,6 @@
 # Pandas 資料分析和常用工具
 
-<img src="figure/pandas.png" alt="pandas" width="1200">
+<img src="figure/pandas.jpg" alt="pandas" width="1200">
 
 ## 引言
 `pandas` 是一個強大的資料分析與處理工具，廣泛應用於數據科學、統計分析和機器學習等領域。本教學手冊旨在介紹 `pandas` 的基本用法，涵蓋資料讀取、清理、操作、分析和視覺化。
