@@ -59,6 +59,7 @@ param_grid = {
 ```
 
 ## 網格搜索 (Grid Search)
+### 更多詳細資訊 [Grid Search from Scikit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV)
 ```python
 # 初始化網格搜索
 grid_search = GridSearchCV(estimator=baseline_model, param_grid=param_grid, cv=5, n_jobs=-1, verbose=2)
@@ -72,6 +73,7 @@ print(f"Best cross-validation score: {grid_search.best_score_}")
 ```
 
 ## 隨機搜索 (Random Search)
+### 更多詳細資訊 [Random Search from Scikit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV)
 ```python
 # 初始化隨機搜索
 random_search = RandomizedSearchCV(estimator=baseline_model, param_distributions=param_grid, n_iter=100, cv=5, n_jobs=-1, verbose=2, random_state=42)
