@@ -10,7 +10,7 @@
 SHAP 提供了一種統一的方法來解釋任何機器學習模型的輸出。
 使用 **Scikit-learn** 訓練的隨機森林模型和乳腺癌數據集來示範。
 
-## 安裝SHAP
+## 在Jupyter Notebook 環境中安裝SHAP
 ```python
 %pip install -q shap
 ```
