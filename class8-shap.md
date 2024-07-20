@@ -1,7 +1,11 @@
 # SHAP (SHapley Additive exPlanations)
-##使用 SHAP 可視化模型結果
+## 使用 SHAP 可視化模型結果
+
+<img src="figure/shap_header.svg" alt="shap_header" width="1200">
 
 在本節中，將介紹如何使用 SHAP (SHapley Additive exPlanations) 來解釋和可視化機器學習模型的預測結果。
+
+[SHAP Website](https://github.com/shap/shap)
 
 SHAP 提供了一種統一的方法來解釋任何機器學習模型的輸出。
 使用 **Scikit-learn** 訓練的隨機森林模型和乳腺癌數據集來示範。
