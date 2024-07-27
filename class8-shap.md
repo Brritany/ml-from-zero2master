@@ -8,11 +8,11 @@
 # [SHAP Website](https://github.com/shap/shap)
 
 SHAP 提供了一種統一的方法來解釋任何機器學習模型的輸出。
-使用 **Scikit-learn** 訓練的隨機森林模型和乳腺癌數據集來示範。
+使用 **diabetes_prediction_dataset.csv** 訓練的 **LightGBM** 和乳腺癌數據集來示範。
 
 ## 在Jupyter Notebook 環境中安裝SHAP
 ```python
-%pip install -q shap
+!pip install -q shap
 ```
 
 ## 導入工具包
@@ -21,19 +21,28 @@ import shap
 import pandas as pd
 import numpy as np
 import lightgbm as lgb
-from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 ```
 
 ## 載入資料集
 ```python
 # 加載數據集
-data = load_breast_cancer()
-df = pd.DataFrame(data.data, columns=data.feature_names)
-df['target'] = data.target
+df = pd.read_csv('diabetes_prediction_dataset.csv')
+df.head()
 
-X = df.drop('target', axis=1)
-y = df['target']
+## Preprocessing
+df['gender'] = df['gender'].map({'Female': 0, 'Male': 1, 'Other': 2})
+df['smoking_history'] = df['smoking_history'].replace(
+    {'never': 0, 'No Info': np.nan,
+     'current': 1, 'former': 1, 'ever': 1, 'not current': 1
+    }
+)
+df.dropna(inplace=True)
+df.head()
+
+## Split Dataset to Train & Test
+X = df.drop('diabetes', axis=1)
+y = df['diabetes']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 ```
@@ -64,12 +73,6 @@ shap_values = explainer.shap_values(X_test)
 
 - 顏色：點的顏色表示特徵值的大小。顏色從藍色（低值）到紅色（高值）逐漸變化。例如，顏色為紅色的點表示該特徵在該樣本中的值較高。
 
-- 如何解讀
-1. 特徵影響大小：特徵的垂直位置越高，表示該特徵對模型輸出影響越大。例如，“worst concave points” 特徵影響最大。橫向散布的範圍越大，表示該特徵對不同樣本的影響差異越大。
-
-2. 特徵值對影響方向的影響：顏色的分布可以幫助理解該特徵值的大小對模型預測的影響方向。例如，對於“worst concave points”特徵，紅色的點多分布在 SHAP 值的正方向，表示高值的“worst concave points”增加了預測的概率。
-
-3. 特徵之間的交互作用：點的水平密集度和顏色變化模式可以反映特徵之間的交互作用。例如，某些特徵可能只有在特定值範圍內才顯示出顯著的影響。
 ```python
 shap.plots.beeswarm(shap_values)
 ```
